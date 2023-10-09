@@ -1,0 +1,39 @@
+Z1: Stwórz wektor o wartościach 1, 0.9, 0.8 … -0.9 
+aa=[1:%-0.1:-0.9]
+aa=[1:-0.1:-0.9]
+
+Z2: Stwórz macierz o zawartości: 
+1	2.1
+4	2.0
+..
+40	0.8
+
+aa=[1:3:40;2.1:-0.1:0.8]
+aa'
+
+Z3: W poniższej macierzy pomnóż wiersze kolejno przez 1, 100, 10 za pomocą jednego polecenia. 
+aa=[1,2,3;4,5,6;7,8,9]
+aa.* [1;100;10]
+
+Z4: W poniższej macierzy pomnóż kolumny kolejno przez 1, 0.1, 10 za pomocą jednego polecenia.
+aa=[1,2,3;4,5,6;7,8,9]
+aa.*[1;0.1;10]'
+
+Z5: Stwórz wektor o wartościach 11, 12 .. 20 i wskaż czy kolejne elementy w tym wektorze są jednocześnie większe niż 15 i mniejsze lub równe 18. Wynik powinien wynosić 0, 0, 0, 0, 0, 1, 1, 1, 0, 0.
+aa=[11:1:20]
+aa>15&aa<=18
+
+Z6: Sprawdź wynik mnożenia poniżej macierzy prze poniższy wektor transponowany („pionowy”)
+aa=[1:1:41;2.1:0.1:6.1]'
+wekt = [1, 1000]'
+ans = aa'
+wynik = ans*wekt
+
+Z7: Za pomocą odwracania macierzy wylicz wartość układu równań.
+aa=[3 1; -1 1]^-1 * [31;-9]
+
+Z8: Dla poniższej macierzy pokaż wartości wszystkich kolumn zaczynając, a wierszas zaczynając  od przedostatniego i kończąc na pierwszym
+aa=[1,2,3;4,5,6;7,8,9]
+aa(end-1:-1:1, :)
+
+
