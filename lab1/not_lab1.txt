@@ -36,4 +36,52 @@ Z8: Dla poniższej macierzy pokaż wartości wszystkich kolumn zaczynając, a wi
 aa=[1,2,3;4,5,6;7,8,9]
 aa(end-1:-1:1, :)
 
+Z9: W poniższej macierzy powiększ wartości pomiędzy 2 i 5 o 10 z pomocą jednej linii kodu.
+aa = 1 2 3; 4 5 6; 7 8 9]
+aa + [0 0 10; 10 0 0; 0 0 0]
 
+Z10: Proszę stworzyć macierz widoczną poniżej, następnie w każdej kolumnie osobno pomniejszyć wartości o średnią wartość w tej kolumnie.
+aa = [1 2 3; 4 5 4; 7 8 5]
+aa - mean(aa)
+
+Z11: Stwórz ręcznie macierz widoczną poniżej, następnie pobierz wielkość macierzy poniżej, później stwórz macierz o tej samej wartości wypełnioną wartościami losowymi z przedziału  [-1;+1].
+aa= [1 2 3; 4 5 4]
+bb = 2*rand(size(aa,1),size(aa,2))-1
+
+Z12: Proszę stworzyć macierz o rozmiarze  4x3 wypełnioną losowymi wartościami całkowitymi z przedziału [0; 5], a następnie proszę za pomocą podwójnej pętli przeiterować każdy wiersz osobno od strony lewej po prawą i sprawić, by kolumny od drugiej do ostatniej były powiększone o wartość po ich lewej stronie (suma z kumulacją). Przydatne funkcje to rand, round, ceil, floor.
+aa = [round(5*rand(1,3));round(5*rand(1,3));round(5*rand(1,3));round(5*rand(1,3))]
+
+for i = 1:size(aa,1)
+ for j = 1:size(aa,2)-1
+  aa(i,j+1)+=aa(i,j)
+  end;
+ end;
+
+
+0   4   4	0  4  8
+1   3   3    -> 1  4  7
+5   5   1	5  10 11
+2   4   0	2  6  6
+
+Z13:Proszę stworzyć macierz o rozmiarze 3x4 wypełnioną losowymi wartościami całkowitymi z przedziału [0; 5], a następnie proszę za pomocą podwójnej pętli i polecenia if wyzerować wartości większe niż 3. Na przykład:
+aa = [round(5*rand(1,4));round(5*rand(1,4));round(5*rand(1,4))]
+for i = 1:size(aa,1)
+ for j = 1:size(aa,2)
+  if aa(i,j) > 3
+   aa(i,j) = 0
+   end;
+  end;
+end;
+
+Z14:Proszę wyświetlić na jednym wykresie funkcje: abs(sin(x)) i atan(x) dla x mieszczącego się w przedziale (-pi; pi). Należy odpowiednio opisać osie OX i OY oraz dodać opis (legendę) dla obu funkcji oraz tytuł dla całego wykresu.
+
+x = [-4:0.1:4]
+hold on;
+>> xlabel('IKSY');ylabel('IGREKI');title('Bardzo wazny wykres')
+;
+>> plot(x,abs(sin(x)))
+>> plot(x,atan(x))
+>> legend('abs(sin(x))','atan(x)')
+>> xlim([-3 3]);ylim([-1.25 1.25]);
+>> hold off;
+>>
