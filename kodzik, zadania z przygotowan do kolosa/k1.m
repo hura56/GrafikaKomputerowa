@@ -1,0 +1,10 @@
+clear;
+clf;
+clc;
+img = double(imread('rzeczka.jpg'));
+img1 = img(:,1:300,:);
+img2 = img;
+img1 = img1(:,end:-1:1,:);
+img2(:,:,:) = img(:,:,:) * 0.5;
+img_out = [img1,img2];
+imshow(img_out/255);

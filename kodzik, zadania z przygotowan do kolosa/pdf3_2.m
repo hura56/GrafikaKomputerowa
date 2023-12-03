@@ -1,0 +1,12 @@
+clear;
+clf;
+clc;
+img = double(imread('rzeczka2.png'));
+gamma = 1.5;
+img_out = img/255;
+img_gamma = img_out.^(1/gamma);
+imshow(img/255);
+title('org');
+figure;
+imshow(img_gamma);
+title('gamma 1.5');

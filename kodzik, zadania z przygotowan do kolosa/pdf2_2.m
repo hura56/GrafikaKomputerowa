@@ -1,0 +1,20 @@
+clear;
+clf;
+clc;
+img = double(imread('plaza1.png'));
+%wyciagniecie R G i B z img
+R = img(:,:,1);
+G = img(:,:,2);
+B = img(:,:,3);
+subplot(2,2,1);
+hist(vec(R+G+B), 100);
+title('R+G+B');
+subplot(2,2,2);
+hist(vec(R), 100);
+title('R');
+subplot(2,2,3);
+hist(vec(G), 100);
+title('G');
+subplot(2,2,4);
+hist(vec(B), 100);
+title('B');
